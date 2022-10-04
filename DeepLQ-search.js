@@ -52,7 +52,7 @@ if (oldurl.indexOf("dlc") != -1) {
 } else if (oldurl.indexOf("dlj") != -1) {
 	newurl += "ja/" + deeplr.exec(oldurl)[3].replace(/\+/g, "%20");
 } else if (oldurl.indexOf("dles") != -1) {
-	newurl += "dles/" + deeplr.exec(oldurl)[3].replace(/\+/g, "%20");
+	newurl += "es/" + deeplr.exec(oldurl)[3].replace(/\+/g, "%20");
 }
 
 /*
