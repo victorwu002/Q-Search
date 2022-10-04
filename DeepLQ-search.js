@@ -1,5 +1,5 @@
 /*
-Encode spaces as "%20" when using key "dlc" / "dle" / "dlj" / "dles" in Q-Search.
+Encode spaces as "%20" when using key "dlc" / "dle" / "dlj" / "dls" in Q-Search.
 Quantumult X:
 # dlc xxx (DeepL 译至中)
 ^https:\/\/duckduckgo.com\/\?q=dlc(\+|%20)([^&]+).+ url script-echo-response https://raw.githubusercontent.com/victorwu002/Q-Search/main/DeepLQ-search.js
@@ -7,8 +7,8 @@ Quantumult X:
 ^https:\/\/duckduckgo.com\/\?q=dle(\+|%20)([^&]+).+ url script-echo-response https://raw.githubusercontent.com/victorwu002/Q-Search/main/DeepLQ-search.js
 # dlj xxx (DeepL 译至日)
 ^https:\/\/duckduckgo.com\/\?q=dlj(\+|%20)([^&]+).+ url script-echo-response https://raw.githubusercontent.com/victorwu002/Q-Search/main/DeepLQ-search.js
-# dles xxx (DeepL 译至西)
-^https:\/\/duckduckgo.com\/\?q=dles(\+|%20)([^&]+).+ url script-echo-response https://raw.githubusercontent.com/victorwu002/Q-Search/main/DeepLQ-search.js
+# dls xxx (DeepL 译至西)
+^https:\/\/duckduckgo.com\/\?q=dls(\+|%20)([^&]+).+ url script-echo-response https://raw.githubusercontent.com/victorwu002/Q-Search/main/DeepLQ-search.js
 Surge:
 # dlc xxx (DeepL 译至中)
 DeepLtoChinese = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dlc(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/victorwu002/Q-Search/main/DeepLQ-search.js
@@ -16,12 +16,12 @@ DeepLtoChinese = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dlc(\+
 DeepLtoEnglish = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dle(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/victorwu002/Q-Search/main/DeepLQ-search.js
 # dlj xxx (DeepL 译至日)
 DeepLtoJapanese = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dlj(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/victorwu002/Q-Search/main/DeepLQ-search.js
-# dles xxx (DeepL 译至西)
-DeepLtoespañol = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dles(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/victorwu002/Q-Search/main/DeepLQ-search.js
+# dls xxx (DeepL 译至西)
+DeepLtoespañol = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dls(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/victorwu002/Q-Search/main/DeepLQ-search.js
 Notice that the URL Rewirte methods have higher priority than using a script, so need modify the final URL Rewrite's(the rewrite with no key) regular expression.
  */
 
-const deeplr = /^https:\/\/duckduckgo.com\/\?q=dl(c|e|j|es)(\+|%20)([^&]+).+/;
+const deeplr = /^https:\/\/duckduckgo.com\/\?q=dl(c|e|j|s)(\+|%20)([^&]+).+/;
 const oldurl = $request.url;
 let newurl = "https://www.deepl.com/translator#auto/";
 if (oldurl.indexOf("dlc") != -1) {
@@ -30,7 +30,7 @@ if (oldurl.indexOf("dlc") != -1) {
 	newurl += "en/" + deeplr.exec(oldurl)[3].replace(/\+/g, "%20");
 } else if (oldurl.indexOf("dlj") != -1) {
 	newurl += "ja/" + deeplr.exec(oldurl)[3].replace(/\+/g, "%20");
-} else if (oldurl.indexOf("dles") != -1) {
+} else if (oldurl.indexOf("dls") != -1) {
 	newurl += "es/" + deeplr.exec(oldurl)[3].replace(/\+/g, "%20");
 }
 
