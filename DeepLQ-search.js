@@ -1,24 +1,3 @@
-# 借用改自zZpiglet 
-Skip to content
-Sign up
-zZPiglet
-/
-Task
-Public
-Code
-Issues
-6
-Pull requests
-Discussions
-Actions
-Projects
-Security
-Insights
-Task/asset/DeepLQ-search.js
-@zZPiglet
-zZPiglet Encode space as "%20" when using key "dlc" / "dle" / "dlj" / "dles".
- 1 contributor
-65 lines (55 sloc)  2.95 KB
 /*
 Encode spaces as "%20" when using key "dlc" / "dle" / "dlj" / "dles" in Q-Search.
 Quantumult X:
@@ -86,17 +65,3 @@ let resp = isQuanX ? deepl : { response: deepl };
 resp = typeof $response != "undefined" ? deepl : resp;
 
 $done(resp);
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
