@@ -17,7 +17,7 @@ DeepLtoEnglish = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dle(\+
 # dlj xxx (DeepL 译至日)
 DeepLtoJapanese = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dlj(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/victorwu002/Q-Search/main/DeepLQ-search.js
 # dles xxx (DeepL 译至西)
-DeepLtoespanol = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dles(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/victorwu002/Q-Search/main/DeepLQ-search.js
+DeepLtoespañol = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dles(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/victorwu002/Q-Search/main/DeepLQ-search.js
 Notice that the URL Rewirte methods have higher priority than using a script, so need modify the final URL Rewrite's(the rewrite with no key) regular expression.
  */
 
@@ -37,10 +37,10 @@ if (oldurl.indexOf("dlc") != -1) {
 /*
 // Need add MitM hostname = www.deepl.com when using this method, but choose your key flexibly.
 // Quantumult X:
-// ^https:\/\/www.deepl.com\/translator#(\S+?)\/(\S+?)\/([\s\S]*) url script-echo-response https://raw.githubusercontent.com/victorwu002/Q-Search/main/DeepLQ-search.js
+// ^https:\/\/www.deepl.com\/translator#(\S+?)\/(\S+?)\/(\S+?)\/([\s\S]*) url script-echo-response https://raw.githubusercontent.com/victorwu002/Q-Search/main/DeepLQ-search.js
 // Surge:
 // DeepLQ-Search = type=http-request,pattern=^https:\/\/www.deepl.com\/translator#(\S+?)\/(\S+?)\/([\s\S]*),script-path=https://raw.githubusercontent.com/victorwu002/Q-Search/main/DeepLQ-search.js
-const deeplr = /^https:\/\/www.deepl.com\/translator#(\S+?)\/(\S+?)\/([\s\S]*)/;
+const deeplr = /^https:\/\/www.deepl.com\/translator#(\S+?)\/(\S+?)\/(\S+?)\/([\s\S]*)/;
 const oldurl = $request.url;
 let newurl =
 	"https://www.deepl.com/translator#" +
@@ -48,7 +48,9 @@ let newurl =
 	"/" +
 	deeplr.exec(oldurl)[2] +
 	"/" +
-    deeplr.exec(oldurl)[3].replace(/%2B/g, "%20");
+        deeplr.exec(oldurl)[3] +
+	"/" +
+    deeplr.exec(oldurl)[4].replace(/%2B/g, "%20");
  */
 
 const isQuanX = typeof $notify != "undefined";
