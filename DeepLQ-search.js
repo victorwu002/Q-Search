@@ -4,16 +4,16 @@ Encode spaces as "%20" when using key "dlc" / "dle" / "dlj" in Q-Search.
 Quantumult X:
 # dlc xxx (DeepL 译至中)
 ^https:\/\/duckduckgo.com\/\?q=dlc(\+|%20)([^&]+).+ url script-echo-response https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js
-# dls xxx (DeepL 译至英)
-^https:\/\/duckduckgo.com\/\?q=dle(\+|%20)([^&]+).+ url script-echo-response https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js
+# dls xxx (DeepL 译至西)
+^https:\/\/duckduckgo.com\/\?q=dle(\+|%20)([^&]+).+ url script-echo-response https://raw.githubusercontent.com/victorwu002/Q-Search/main/DeepLQ-search.js
 # dlj xxx (DeepL 译至日)
 ^https:\/\/duckduckgo.com\/\?q=dlj(\+|%20)([^&]+).+ url script-echo-response https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js
 
 Surge:
 # dlc xxx (DeepL 译至中)
 DeepLtoChinese = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dlc(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js
-# dle xxx (DeepL 译至英)
-DeepLtoEnglish = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dle(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js
+# dls xxx (DeepL 译至西)
+DeepLtoEspanol = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dle(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/victorwu002/Q-Search/main/DeepLQ-search.js
 # dlj xxx (DeepL 译至日)
 DeepLtoJapanese = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dlj(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js
 
