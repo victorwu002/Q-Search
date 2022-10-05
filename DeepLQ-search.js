@@ -1,5 +1,3 @@
-# js文件借用zZPiglet修改，增加西班牙语翻译。感谢zZPiglet
-# https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js
 /*
 Encode spaces as "%20" when using key "dlc" / "dle" / "dlj" / "dls" in Q-Search.
 
