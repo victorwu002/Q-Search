@@ -5,7 +5,7 @@ Quantumult X:
 # dlc xxx (DeepL 译至中)
 ^https:\/\/duckduckgo.com\/\?q=dlc(\+|%20)([^&]+).+ url script-echo-response https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js
 # dls xxx (DeepL 译至西)
-^https:\/\/duckduckgo.com\/\?q=dle(\+|%20)([^&]+).+ url script-echo-response https://raw.githubusercontent.com/victorwu002/Q-Search/main/DeepLQ-search.js
+^https:\/\/duckduckgo.com\/\?q=dls(\+|%20)([^&]+).+ url script-echo-response https://raw.githubusercontent.com/victorwu002/Q-Search/main/DeepLQ-search.js
 # dlj xxx (DeepL 译至日)
 ^https:\/\/duckduckgo.com\/\?q=dlj(\+|%20)([^&]+).+ url script-echo-response https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js
 
