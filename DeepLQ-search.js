@@ -20,7 +20,7 @@ DeepLtoJapanese = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dlj(\
 Notice that the URL Rewirte methods have higher priority than using a script, so need modify the final URL Rewrite's(the rewrite with no key) regular expression.
  */
 
-const deeplr = /^https:\/\/duckduckgo.com\/\?q=dl(c|e|j)(\+|%20)([^&]+).+/;
+const deeplr = /^https:\/\/duckduckgo.com\/\?q=dl(c|s|j)(\+|%20)([^&]+).+/;
 const oldurl = $request.url;
 let newurl = "https://www.deepl.com/translator#auto/";
 if (oldurl.indexOf("dlc") != -1) {
