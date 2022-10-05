@@ -1,5 +1,5 @@
 /*
-Encode spaces as "%20" when using key "dlc" / "dle" / "dlj" / "dls" in Q-Search.
+Encode spaces as "%20" when using key "dlc" / "dls" / "dle" / "dlj" in Q-Search.
 
 Quantumult X:
 # dlc xxx (DeepL 译至中)
