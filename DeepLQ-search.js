@@ -31,13 +31,13 @@ const deeplr = /^https:\/\/duckduckgo.com\/\?q=dl(c|s|e|j)(\+|%20)([^&]+).+/;
 const oldurl = $request.url;
 let newurl = "https://www.deepl.com/translator#auto/";
 if (oldurl.indexOf("dlc") != -1) {
-	newurl += "zh/" + deeplr.exec(oldurl)[3].replace(/\+/g, "%20");
+	newurl += "zh/" + deeplr.exec(oldurl)[4].replace(/\+/g, "%20");
 } else if (oldurl.indexOf("dls") != -1) {
-	newurl += "es/" + deeplr.exec(oldurl)[3].replace(/\+/g, "%20");
+	newurl += "es/" + deeplr.exec(oldurl)[4].replace(/\+/g, "%20");
 } else if (oldurl.indexOf("dle") != -1) {
-	newurl += "en/" + deeplr.exec(oldurl)[3].replace(/\+/g, "%20");
+	newurl += "en/" + deeplr.exec(oldurl)[4].replace(/\+/g, "%20");
 } else if (oldurl.indexOf("dlj") != -1) {
-	newurl += "ja/" + deeplr.exec(oldurl)[3].replace(/\+/g, "%20");
+	newurl += "ja/" + deeplr.exec(oldurl)[4].replace(/\+/g, "%20");
 }
 
 /*
@@ -55,7 +55,9 @@ let newurl =
 	"/" +
 	deeplr.exec(oldurl)[2] +
 	"/" +
-    deeplr.exec(oldurl)[3].replace(/%2B/g, "%20");
+        deeplr.exec(oldurl)[3] +
+	"/" +
+    deeplr.exec(oldurl)[4].replace(/%2B/g, "%20");
  */
 
 const isQuanX = typeof $notify != "undefined";
